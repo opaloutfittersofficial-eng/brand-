@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --gold: #ffd700;
+  --gold-light: #ffe566;
+  --gold-dark: #b8860b;
+  --dark-green: #0a1f0a;
+  --mid-green: #0d2b0d;
+  --card-green: #112211;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--dark-green);
+  color: #e8e0c8;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--dark-green);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--gold-dark);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold);
+}
+
+/* Gold text gradient */
+.gold-text {
+  background: linear-gradient(135deg, #ffd700, #ffe566, #b8860b, #ffd700);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s infinite;
+}
+
+.gold-border {
+  border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.gold-border-hover:hover {
+  border-color: rgba(255, 215, 0, 0.8);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+}
+
+/* Luxury card */
+.luxury-card {
+  background: linear-gradient(135deg, #112211, #0d2b0d);
+  border: 1px solid rgba(255, 215, 0, 0.15);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.luxury-card:hover {
+  border-color: rgba(255, 215, 0, 0.5);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 215, 0, 0.1);
+  transform: translateY(-8px);
+}
+
+/* Btn gold */
+.btn-gold {
+  background: linear-gradient(135deg, #b8860b, #ffd700, #b8860b);
+  background-size: 200% 200%;
+  color: #0a1f0a;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-gold:hover {
+  background-position: right center;
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Overlay gradient */
+.hero-overlay {
+  background: linear-gradient(to bottom, rgba(10,31,10,0.7) 0%, rgba(10,31,10,0.3) 50%, rgba(10,31,10,0.9) 100%);
+}
+
+/* Nav glass */
+.nav-glass {
+  background: rgba(10, 31, 10, 0.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 215, 0, 0.15);
+}
+
+/* Section divider */
+.gold-divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, #ffd700, transparent);
+  margin: 2rem 0;
+}
+
+/* WhatsApp pulse */
+.whatsapp-btn {
+  animation: pulseGold 2s infinite, float 3s ease-in-out infinite;
+}
+
+/* Image zoom on hover */
+.img-zoom {
+  overflow: hidden;
+}
+.img-zoom img {
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.img-zoom:hover img {
+  transform: scale(1.1);
+}
+
+/* Marquee banner */
+.marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* Dropdown animation */
+.dropdown-enter {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+.dropdown-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Price tag */
+.price-tag {
+  background: linear-gradient(135deg, #b8860b, #ffd700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+
+/* Custom input */
+.luxury-input {
+  background: rgba(17, 34, 17, 0.8);
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  color: #e8e0c8;
+  transition: all 0.3s ease;
+}
+.luxury-input:focus {
+  outline: none;
+  border-color: rgba(255, 215, 0, 0.6);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.1);
+}
+.luxury-input::placeholder {
+  color: rgba(232, 224, 200, 0.4);
+}
